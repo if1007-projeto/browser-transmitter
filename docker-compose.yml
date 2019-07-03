@@ -1,12 +1,12 @@
 version: '2'
 
 services:
-  face_recognizer:
-    container_name: face_recognizer
+  browser_transmitter:
+    container_name: browser_transmitter
     build: .
     environment:
       KAFKA_URL: 'kafka:29092'
-      KAFKA_TOPIC: 'example-stream'
+      KAFKA_TOPIC: 'frames'
     networks: 
       - default
       - server_network
