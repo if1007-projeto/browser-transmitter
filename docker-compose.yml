@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  face_recognizer:
+    container_name: face_recognizer
+    build: .
+    environment:
+      KAFKA_URL: 'kafka:29092'
+      KAFKA_TOPIC: 'example-stream'
+    networks: 
+      - default
+      - server_network
+    ports:
+      - 5000:5000
+
+networks:
+  server_network:
+    external: true
